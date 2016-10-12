@@ -39,3 +39,37 @@ body {
 .error {
   border-color: red;
 }
+
+table thead th {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+a, a:visited {
+  color: #000;
+}
+
+a:focus, a:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+.btn:visited {
+  color: #fff;
+
+}
+
+#error_explanation {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  text-align: justify;
+}
