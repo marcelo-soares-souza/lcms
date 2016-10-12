@@ -219,3 +219,5 @@ pt-BR:
   false_value: "Não"
   users: "Usuários"
   about: "Sobre"
+  login: "Entrar"
+  logout: "Sair"

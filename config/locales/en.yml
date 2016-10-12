@@ -214,3 +214,5 @@ en:
   false_value: "No"
   users: "Users"
   about: "About"
+  login: "Login"
+  logout: "Logout"
