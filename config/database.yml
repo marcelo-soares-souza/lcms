@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  username: lcms
+  password: lcms
+  encoding: utf8
+  pool: 5
+
+development:
+  <<: *default
+  database: lcms_development
+
+test:
+  <<: *default
+  database: lcms_test
+
+production:
+  <<: *default
+  database: lcms_production
