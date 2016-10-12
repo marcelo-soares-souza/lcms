@@ -22,13 +22,18 @@
       <dt class="col-sm-3"><strong>Title:</strong></dt>
       <dd class="col-sm-9"><%= @image.title %>&nbsp;</dd>
 
-      <dt class="col-sm-3"><strong>Tags:</strong></dt>
-      <dd class="col-sm-9"><%= @image.tag_list %>&nbsp;</dd>
+      <% if ! @image.tag_list.empty? %>
+        <dt class="col-sm-3"><strong>Tags:</strong></dt>
+        <dd class="col-sm-9"><%= @image.tag_list %>&nbsp;</dd>
+      <% end %>
+
+      <dt class="col-sm-3"><strong>Enviada:</strong></dt>
+      <dd class="col-sm-9"><%= @image.user.fullname %>&nbsp;</dd>
     </dl>
 
     <hr/>
     <% if user_signed_in? %>
-      <% if current_user.admin? %>
+      <% if current_user.admin? or @image.user.id == current_user.id %>
         <div class="form-actions">
           <%= link_to "Voltar", images_path, :class => 'btn btn-success'  %>
           <%= link_to "Editar", edit_image_path(@image), :class => 'btn btn-warning' %>

@@ -9,4 +9,6 @@ class Image < ApplicationRecord
 
   validates :title, :presence => true, length: { minimum: 4 }
   validates :file, :presence => true
+
+  belongs_to :user
 end
