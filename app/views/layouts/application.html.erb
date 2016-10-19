@@ -33,7 +33,10 @@
             </li>
           <% end %>
           <li class="nav-item" id='login-logout'>
-            <%= link_to(image_tag(Gravatar.new(current_user.email).image_url, :size => "25x25") + " (#{current_user.fullname}) #{t(:logout)}", destroy_user_session_path, :method => :delete, :class => "nav-link") %>
+            <%= link_to("#{t(:logout)}", destroy_user_session_path, :method => :delete, :class => "nav-link") %>
+          </li>
+          <li class="nav-item" id='login-logout'>
+            <%= link_to(image_tag(Gravatar.new(current_user.email).image_url, :size => "25x25") + " (#{current_user.fullname})", user_path(current_user), :class => "nav-link") %>
           </li>
           <% else %>
             <li class="nav-item" id='login-logout'>

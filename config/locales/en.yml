@@ -217,3 +217,7 @@ en:
   login: "Login"
   logout: "Logout"
   images: "Images"
+  submit: "Submit"
+  edit: "Edit"
+  destroy: "Destroy"
+  back: "Back"

@@ -222,3 +222,7 @@ pt-BR:
   login: "Entrar"
   logout: "Sair"
   images: "Imagens"
+  submit: "Enviar"
+  edit: "Editar"
+  destroy: "Apagar"
+  back: "Voltar"
