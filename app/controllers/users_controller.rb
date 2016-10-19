@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show]
   before_action :check_if_admin, only: [:index]
-  before_action only: [:edit, :update, :destroy] { check_if_owner params[:id] }
+  before_action only: [:edit, :update, :destroy] { check_if_user_owner params[:id] }
 
   def index
     @users = User.all
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'Usuário foi alterado(a) com sucesso.' }
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

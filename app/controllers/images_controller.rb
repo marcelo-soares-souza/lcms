@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action only: [:edit, :update, :destroy] { check_owner Image.friendly.find(params[:id]).user_id }
 
   # GET /images
   # GET /images.json

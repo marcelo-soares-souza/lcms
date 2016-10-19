@@ -16,9 +16,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:fullname])
   end
 
-  def check_if_owner(id)
+  def check_if_user_owner(id)
     if signed_in?
       if ! current_user.admin? and current_user.slug != id
+        redirect_to root_url, alert: "Permission Denied"
+      end
+    end
+  end
+
+  def check_owner(user_id)
+    if signed_in?
+      if ! current_user.admin? and current_user.id != user_id
         redirect_to root_url, alert: "Permission Denied"
       end
     end
