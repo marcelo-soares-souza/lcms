@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <%= link_to "All", images_path, :class => "nav-link" %>
+    <%= link_to t(:all), images_path, :class => "nav-link" %>
   </li>
   <li class="nav-item">
-    <%= link_to 'New', new_image_path, :class => "nav-link" %>
+    <%= link_to t(:new), new_image_path, :class => "nav-link" %>
   </li>
   <li class="nav-item">
     <%= link_to "Editing #{@image.title}", edit_image_path(@image), :class => "nav-link active" %>

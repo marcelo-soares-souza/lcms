@@ -141,6 +141,8 @@ pt-BR:
         one: 'Não foi possível gravar %{model}: 1 erro'
         other: 'Não foi possível gravar %{model}: %{count} erros'
   helpers:
+    links:
+      confirm: Você tem Certeza
     select:
       prompt: Por favor selecione
     submit:
@@ -226,3 +228,8 @@ pt-BR:
   edit: "Editar"
   destroy: "Apagar"
   back: "Voltar"
+  new: "Novo"
+  all: "Todos"
+  file: "Arquivo"
+  title: "Título"
+  details: "Detalhes"

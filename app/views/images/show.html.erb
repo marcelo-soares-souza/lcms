@@ -1,14 +1,14 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <%= link_to "All", images_path, :class => "nav-link" %>
+    <%= link_to t(:all), images_path, :class => "nav-link" %>
   </li>
   <% if user_signed_in? %>
     <li class="nav-item">
-      <%= link_to 'New', new_image_path, :class => "nav-link" %>
+      <%= link_to t(:new), new_image_path, :class => "nav-link" %>
     </li>
   <% end %>
   <li class="nav-item">
-    <%= link_to "Details #{@image.title}", image_path(@image), :class => "nav-link active" %>
+    <%= link_to "#{t(:details)} #{@image.title}", image_path(@image), :class => "nav-link active" %>
   </li>
 </ul>
 
@@ -37,7 +37,7 @@
         <div class="form-actions">
           <%= link_to t(:back), images_path, :class => 'btn btn-success'  %>
           <%= link_to t(:edit), edit_image_path(@image), :class => 'btn btn-warning' %>
-          <%= link_to t(:destroy), image_path(@image), :method => 'delete', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Você tem Certeza?')) }, :class => 'btn btn-danger' %>
+          <%= link_to t(:destroy), image_path(@image), :method => 'delete', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm")) }, :class => 'btn btn-danger' %>
         </div>
       <% end %>
     <% end %>
