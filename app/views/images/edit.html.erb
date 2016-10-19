@@ -6,7 +6,7 @@
     <%= link_to t(:new), new_image_path, :class => "nav-link" %>
   </li>
   <li class="nav-item">
-    <%= link_to "Editing #{@image.title}", edit_image_path(@image), :class => "nav-link active" %>
+    <%= link_to "#{t(:edit)} #{@image.title}", edit_image_path(@image), :class => "nav-link active" %>
   </li>
 </ul>
 <br/>
