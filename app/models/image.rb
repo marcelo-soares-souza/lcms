@@ -9,4 +9,9 @@ class Image < ApplicationRecord
   validates :file, presence: true
 
   belongs_to :user
+
+  protected
+    def should_generate_new_friendly_id?
+      title_changed?
+    end
 end

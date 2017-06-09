@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019164320) do
+ActiveRecord::Schema.define(version: 20170609141410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.string "slug"
+    t.text "content"
+    t.boolean "publish", default: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_blogs_on_slug", unique: true
+    t.index ["title"], name: "index_blogs_on_title", unique: true
+    t.index ["user_id"], name: "index_blogs_on_user_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -62,5 +75,6 @@ ActiveRecord::Schema.define(version: 20161019164320) do
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  add_foreign_key "blogs", "users"
   add_foreign_key "images", "users"
 end

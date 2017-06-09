@@ -8,7 +8,8 @@ class User < ApplicationRecord
 
   validates :fullname, presence: true
 
-  def should_generate_new_friendly_id?
-    fullname_changed?
-  end
+  protected
+    def should_generate_new_friendly_id?
+      fullname_changed?
+    end
 end
