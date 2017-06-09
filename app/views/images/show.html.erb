@@ -22,11 +22,6 @@
       <dt class="col-sm-3"><strong>Title:</strong></dt>
       <dd class="col-sm-9"><%= @image.title %>&nbsp;</dd>
 
-      <% if ! @image.tag_list.empty? %>
-        <dt class="col-sm-3"><strong>Tags:</strong></dt>
-        <dd class="col-sm-9"><%= @image.tag_list %>&nbsp;</dd>
-      <% end %>
-
       <dt class="col-sm-3"><strong>Enviada:</strong></dt>
       <dd class="col-sm-9"><%= @image.user.fullname %>&nbsp;</dd>
     </dl>

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users
 
   # Main Page Route
-  get 'home/index'
+  get "home/index"
   root to: "home#index"
 end

@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ImagesControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create image" do
-    assert_difference('Image.count') do
+    assert_difference("Image.count") do
       post images_url, params: { image: { slug: @image.slug, title: @image.title } }
     end
 
@@ -39,7 +39,7 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy image" do
-    assert_difference('Image.count', -1) do
+    assert_difference("Image.count", -1) do
       delete image_url(@image)
     end
 

@@ -4,10 +4,9 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :fullname, use: :slugged
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
-  validates :fullname, :presence => true
+  validates :fullname, presence: true
 
   def should_generate_new_friendly_id?
     fullname_changed?
