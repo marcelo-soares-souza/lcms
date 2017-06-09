@@ -232,4 +232,8 @@ pt-BR:
   all: "Todos"
   file: "Arquivo"
   title: "Título"
+  content: "Conteúdo"
+  publish: "Publicar"
   details: "Detalhes"
+  :false: "Não"
+  :true: "Sim"

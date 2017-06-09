@@ -1,35 +1,33 @@
-<p id="notice"><%= notice %></p>
+<% if ! @blogs.empty? %>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= link_to t(:all), blogs_path, :class => "nav-link active" %>
+  </li>
+  <% if user_signed_in? %>
+    <li class="nav-item">
+      <%= link_to t(:new), new_blog_path, :class => "nav-link" %>
+    </li>
+  <% end %>
+</ul>
 
-<h1>Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Slug</th>
-      <th>Content</th>
-      <th>Publish</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.slug %></td>
-        <td><%= blog.content %></td>
-        <td><%= blog.publish %></td>
-        <td><%= blog.user %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+<div class="tab-content">
+  <div class="tab-pane active"><br/>
+    <table class="table">
+      <thead>
+        <th><%= t(:title) %></th>
+        <th><%= t(:publish) %></th>
+      </thead>
+      <tbody>
+        <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= link_to blog.title, blog_path(blog) %></td>
+          <td><%= t(blog.publish) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<% else %>
+    <h3>Nenhum Registro Encontrado. <%= link_to 'Cadastrar?', new_blog_path %></h3>
+<% end %>

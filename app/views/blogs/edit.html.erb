@@ -1,6 +1,13 @@
-<h1>Editing Blog</h1>
-
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= link_to t(:all), blogs_path, :class => "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to t(:new), new_blog_path, :class => "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "#{t(:edit)} #{@blog.title}", edit_blog_path(@blog), :class => "nav-link active" %>
+  </li>
+</ul>
+<br/>
 <%= render 'form', blog: @blog %>
-
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
